@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div class="bg">
+    <div class="row">
+        <form action = "soiltypes" method="POST">
+            {% csrf_token %}
+        <h1>Soil Type</h1>
+        <br>
+        <br>
+            <label for="cars">Choose a Soil:</label>
+            <select name="soil" id="cars" class="mdb-select md-form" searchable="Search here..">
+                <option>--choose soil her--</option>
+                <option value="Alluvial Soil">Alluvial Soil</option>
+                <option value="Black Soil">Black Soil</option>
+                <option value="Red Soil">Red Soil</option>
+                <option value="Clay Soil">Clay Soil</option>
+                <option value="Sandy Soil">Sandy Soil</option>
+              </select><br>
+              <button  class="btn btn-success" name="Click">Click</button><br>
+        {% block contentt %}
+        {% endblock %}
+
+
+    </form>
+    </div>
+    </div>
+    </div>  
+{% endblock %}    

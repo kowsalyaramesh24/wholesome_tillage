@@ -1,0 +1,62 @@
+{% extends 'soil.html' %}
+{% load static %}
+{% block contentt %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-image table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Si.No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+         {% for content in contents %}
+                <tr>
+                  <th scope="row">{{content.id}}</th>
+                  <td class="w-25"><img src="{{content.img.url}}" class="img-fluid img-thumbnail" alt="Sheep" alt="Card image cap"></td>
+
+        {% if content.name == 'Tomato' %}
+        <td><a href="{% url 'vegsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Paddy' %}
+        <td><a href="{% url 'viewdetail' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Carrot' %}
+        <td><a href="{% url 'tubersdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Beetroot' %}
+        <td><a href="{% url 'tubersdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Potato' %}
+        <td><a href="{% url 'tubersdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Tomato' %}
+        <td><a href="{% url 'vegsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Cabbage' %}
+        <td><a href="{% url 'vegsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Cucumber' %}
+        <td><a href="{% url 'vegsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Mango' %}
+        <td><a href="{% url 'fruitsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Guava' %}
+        <td><a href="{% url 'fruitsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Pomegranate' %}
+        <td><a href="{% url 'fruitsdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Curry' %}
+        <td><a href="{% url 'greensdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Coriander' %}
+        <td><a href="{% url 'greensdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% elif content.name == 'Lettuce' %}
+        <td><a href="{% url 'greensdetails' content.name %}" class="btn btn-success" name = "view">{{content.name}}</a></td>
+        {% else %}
+        <td>
+            <h5><b>{{content.name}}</b></h5>
+        </td>
+        {% endif %}
+         </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+{% endblock %}
